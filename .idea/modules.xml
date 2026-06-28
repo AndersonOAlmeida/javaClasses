@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Construtores/Construtores.iml" filepath="$PROJECT_DIR$/Construtores/Construtores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Encapsulamento/Encapsulamento.iml" filepath="$PROJECT_DIR$/Encapsulamento/Encapsulamento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExerciciosFixacao/ExerciciosFixacao.iml" filepath="$PROJECT_DIR$/ExerciciosFixacao/ExerciciosFixacao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MembrosEstaticos/MembrosEstaticos.iml" filepath="$PROJECT_DIR$/MembrosEstaticos/MembrosEstaticos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Program/Program.iml" filepath="$PROJECT_DIR$/Program/Program.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaClasses.iml" filepath="$PROJECT_DIR$/javaClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaClasses2.iml" filepath="$PROJECT_DIR$/javaClasses2.iml" />
+    </modules>
+  </component>
+</project>

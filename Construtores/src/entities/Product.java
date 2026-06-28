@@ -90,10 +90,10 @@ public class Product {
 	}
 
 	public String toString() {
-		return "Produc data: " + name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
+		return "Product data: " + name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
 				+ String.format("%.2f", totalValueInStock());
 		/*
-		 * String.format converte uma variável em string e formata ela pra derminado
+		 * String.format converte uma variável em string e formata ela pra deterrminado
 		 * tipo de variável, utilizando primeiro a máscara e depois a variável ou método
 		 * a ser convertido
 		 */
