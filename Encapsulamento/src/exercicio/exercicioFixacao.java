@@ -39,7 +39,7 @@ public class exercicioFixacao {
             conta.setInitialBalance(sc.nextDouble());
 
             System.out.println("Account data:");
-            conta.toString();
+            System.out.print(conta.toString());
         } else {
             System.out.print("Shutting down...");
         }
