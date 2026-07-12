@@ -34,12 +34,23 @@ public class exercicioFixacao {
         conta.setName(sc.nextLine());
         System.out.print("Is there an initial deposit (y/n)? ");
         String answer = sc.next();
+
         if (answer.equals("y")) {
             System.out.print("Enter initial deposit value: ");
             conta.setInitialBalance(sc.nextDouble());
 
-            System.out.println("Account data:");
-            System.out.print(conta.toString());
+            System.out.println("\nAccount data:");
+            System.out.println(conta.toString());
+
+            System.out.print("\nEnter a deposit value: ");
+            conta.deposit(sc.nextDouble());
+            System.out.println("Updated account data:");
+            System.out.println(conta.toString());
+
+            System.out.print("\nEnter a withdraw value: ");
+            conta.withdrawal(sc.nextDouble());
+            System.out.println("Updated account data: ");
+            System.out.println(conta.toString());
         } else {
             System.out.print("Shutting down...");
         }
