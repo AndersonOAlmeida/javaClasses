@@ -28,7 +28,7 @@ public class exercicioFixacao {
         BankAccount conta = new BankAccount();
 
         System.out.print("Enter account number: ");
-        conta.setAccount(sc.nextInt());
+        conta.accountId;
         sc.nextLine();
         System.out.print("Enter account holder: ");
         conta.setName(sc.nextLine());
@@ -37,7 +37,7 @@ public class exercicioFixacao {
 
         if (answer.equals("y")) {
             System.out.print("Enter initial deposit value: ");
-            conta.setInitialBalance(sc.nextDouble());
+            conta.initialBalance(sc.nextDouble());
 
             System.out.println("\nAccount data:");
             System.out.println(conta.toString());

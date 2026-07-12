@@ -7,19 +7,20 @@ public class BankAccount {
     private Integer accountId;
     private double balance;
 
-    public BankAccount() {  }
+    public BankAccount(String name, int accountId) {
+        this.name = name;
+        this.accountId = accountId;
+    }
+
+    public BankAccount(String name, int accountId, double initialBalance) {
+        this.name = name;
+        this.accountId = accountId;
+        deposit(initialBalance);
+    }
 
     /* setters */
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setAccount(int accountId) {
-        this.accountId = accountId;
-    }
-
-    public void setInitialBalance(double balance) {
-        this.balance = balance;
     }
 
     /* getters */
