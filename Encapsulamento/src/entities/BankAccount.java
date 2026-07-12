@@ -37,7 +37,7 @@ public class BankAccount {
 
     /* methods */
     public void withdrawal(double saque) {
-        balance -= saque;
+        balance -= (saque + Tax);
     }
 
     public void deposit(double deposito) {
@@ -45,6 +45,6 @@ public class BankAccount {
     }
 
     public String toString() {
-        return "Account " + accountId + ", Holder: " + name + ", Balance " + String.format("%.2f", balance);
+        return "Account " + accountId + ", Holder: " + name + ", Balance $" + String.format("%.2f", balance);
     }
 }
