@@ -4,7 +4,7 @@ public class BankAccount {
     public static double Tax = 5.00;
 
     private String name;
-    private int accountId;
+    private Integer accountId;
     private double balance;
 
     public BankAccount() {  }

@@ -52,7 +52,18 @@ public class exercicioFixacao {
             System.out.println("Updated account data: ");
             System.out.println(conta.toString());
         } else {
-            System.out.print("Shutting down...");
+            System.out.println("\nAccount data:");
+            System.out.println(conta.toString());
+
+            System.out.print("\nEnter a deposit value: ");
+            conta.deposit(sc.nextDouble());
+            System.out.println("Updated account data:");
+            System.out.println(conta.toString());
+
+            System.out.print("\nEnter a withdraw value: ");
+            conta.withdrawal(sc.nextDouble());
+            System.out.println("Updated account data: ");
+            System.out.println(conta.toString());
         }
     }
 }
