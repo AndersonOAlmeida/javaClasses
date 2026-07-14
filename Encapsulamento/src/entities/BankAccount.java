@@ -7,19 +7,20 @@ public class BankAccount {
     private Integer accountId;
     private double balance;
 
-    public BankAccount() {  }
+    public BankAccount(int accountId, String name) {
+        this.name = name;
+        this.accountId = accountId;
+    }
+
+    public BankAccount(int accountId, String name, double initialDeposit) {
+        this.name = name;
+        this.accountId = accountId;
+        deposit(initialDeposit);
+    }
 
     /* setters */
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setAccount(int accountId) {
-        this.accountId = accountId;
-    }
-
-    public void setInitialBalance(double balance) {
-        this.balance = balance;
     }
 
     /* getters */
@@ -45,6 +46,6 @@ public class BankAccount {
     }
 
     public String toString() {
-        return "Account " + accountId + ", Holder: " + name + ", Balance $" + String.format("%.2f", balance);
+        return "\nAccount data:\nAccount: " + getAccount() + ", Holder: " + getName() + ", Balance $" + String.format("%.2f", getBalance());
     }
 }
