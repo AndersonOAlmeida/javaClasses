@@ -12,7 +12,7 @@ public class Product {
     public String getName() {
         return name;
     }
-    public double getPrice() {}
+    public double getPrice() { return price; }
 
     public void setName(String name) {}
     public void setPrice(double price) {}
