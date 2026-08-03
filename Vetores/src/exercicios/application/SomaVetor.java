@@ -39,10 +39,10 @@ public class SomaVetor {
         for (int k = 0; k < list.length; k++) {
             sum += list[k];
         }
-        System.out.print("\nSOMA = " + sum);
+        System.out.printf("\nSOMA = %.2f", sum);
 
         /* Tirando a média dos valores e imprimindo na tela */
         double media = sum / limit;
-        System.out.print("\nMEDIA = " + media);
+        System.out.printf("\nMEDIA = %.2f", media);
     }
 }
