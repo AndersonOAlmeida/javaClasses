@@ -32,7 +32,7 @@ public class Person {
     }
 
     /* Construtores */
-    public void Person(String name, int age, double height) {
+    public Person(String name, int age, double height) {
         setName(name);
         setAge(age);
         setHeight(height);
