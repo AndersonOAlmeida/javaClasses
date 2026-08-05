@@ -21,30 +21,49 @@ public class Alturas {
         /* Obtendo a quantidade de pessoas que serão inseridas no sistema */
         System.out.print("Quantas pessoas serão digitadas? ");
         int limit = sc.nextInt();
+        sc.nextLine(); // Limpa o Enter do nextInt() acima
 
-        /* Criando um objeto pessoa baseado na classe Person importada */
+        /* Criando um vetor pessoa baseado na classe Person importada */
         Person[] pessoa = new Person[limit];
 
         /* Percorrendo cada vetor e inserindo as informações nas classes */
-        for(int i = 1; i <= limit; i++) {
-            System.out.print("\nDados da " + i + "a pessoa: ");
+        for (int i = 0; i < limit; i++) {
+            System.out.print("\nDados da " + (i + 1) + "a pessoa: ");
             System.out.print("\nNome: ");
-            names[i] = pessoa.Person(sc.nextLine());
-            sc.nextLine();
+            String name = sc.nextLine();
             System.out.print("Idade: ");
-            pessoa.Person(sc.nextInt());
+            int age = sc.nextInt();
             System.out.print("Altura: ");
-            pessoa.Person(sc.nextDouble());
+            double height = sc.nextDouble();
+            sc.nextLine();
+            pessoa[i] = new Person(name, age, height);
         }
 
         /* Calculando a altura média das pessoas cadastradas */
         double sumHeights = 0;
-        for(int j = 0; j <= heights.length; j++) {
-            sumHeights += heights[j];
+        for (int j = 0; j < pessoa.length; j++) {
+            sumHeights += pessoa[j].getHeight();
         }
         double avg = sumHeights / limit;
-        System.out.printf("Altura média: %.2f", sumHeights);
+        System.out.printf("\nAltura média: %.2f", avg);
 
-        /*  */
+        /* Calculando a porcentagem de pessoas menores de 16 anos */
+        double percent = 0.0;
+        int counter = 0;
+        for (int k = 0; k < pessoa.length; k++) {
+            int personAge = pessoa[k].getAge();
+            if (personAge < 16) {
+                counter++;
+            }
+        }
+        percent = (100 * (double) counter) / limit;
+        System.out.print("\nPessoas com menos de 16 anos: " + percent + "% \n");
+        for (int l = 0; l < pessoa.length; l++) {
+            int personAge = pessoa[l].getAge();
+            if (personAge < 16) {
+                String personName = pessoa[l].getName();
+                System.out.println(personName);
+            }
+        }
     }
 }
