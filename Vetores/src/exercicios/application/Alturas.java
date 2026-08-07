@@ -65,5 +65,7 @@ public class Alturas {
                 System.out.println(personName);
             }
         }
+
+        sc.close();
     }
 }
