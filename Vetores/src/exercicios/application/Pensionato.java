@@ -32,7 +32,7 @@ public class Pensionato {
 
         // Validando se o limit está dentro dos valores especificados pelo enunciado
         if (limit > 0 && limit <= 10) {
-            // percorrendo cada item do vetor para guardar as informações
+            // Percorrendo cada item do vetor para guardar as informações
             for(int i = 0; i < limit; i++) {
                 System.out.println("\nRent #" + (i + 1));
                 System.out.print("Name: ");
@@ -51,6 +51,7 @@ public class Pensionato {
             System.out.print("Busy rooms:");
             // Percorrendo novamente o array baseado no tamanho do array
             for (int j = 0; j < r.length; j++) {
+                // Condição para ignorar os itens vazios do array
                 if(r[j] != null) {
                     System.out.print(r[j].toString());
                 }
