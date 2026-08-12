@@ -17,10 +17,32 @@ public class exercicio1 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        List<String> emp = new ArrayList<>();
+        List<Employee> list = new ArrayList<>();
 
         System.out.print("How many employees will be registered? ");
         int quantityEmployees = sc.nextInt();
         sc.nextLine();
+
+        for (int i = 0; i < quantityEmployees; i++) {
+            System.out.println("\nEmployee #0" + (i + 1) + ":");
+            System.out.print("Id: ");
+            Integer id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Name: ");
+            String name = sc.nextLine();
+            System.out.print("Salary: ");
+            Double salary = sc.nextDouble();
+
+            Employee emp = new Employee(id, name, salary);
+
+            list.add(emp);
+        }
+
+        System.out.print("Enter the employee id that will have salary increase: ");
+        int seachId = sc.nextInt();
+
+        Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+
+        sc.close();
     }
 }

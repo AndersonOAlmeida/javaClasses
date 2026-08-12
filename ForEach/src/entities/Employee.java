@@ -2,8 +2,8 @@ package entities;
 
 public class Employee {
     private String name;
-    private int id;
-    private double salary = 0.0;
+    private Integer id;
+    private Double salary = 0.0;
 
     public String getName() { return name; }
 
@@ -13,13 +13,17 @@ public class Employee {
 
     public void setName(String name) { this.name = name; }
 
-    public void setId (int id) { this.id = id; }
+    public void setId (Integer id) { this.id = id; }
 
-    public void setInitialSalary(double salary) { this.salary += salary; }
+    public void setSalary(Double salary) { this.salary = salary; }
 
-    public double increaseSalary(double percent) {
-        double raisePercent = percent / 100.0;
-        double realRaise = salary * raisePercent;
-        return salary + realRaise;
+    public void increaseSalary(double percentage) {
+        salary += salary * percentage / 100;
+    }
+
+    public Employee(Integer id, String name, Double salary) {
+        setId(id);
+        setName(name);
+        setSalary(salary);
     }
 }
