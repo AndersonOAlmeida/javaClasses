@@ -1,8 +1,8 @@
 package application;
 
-import java.util.Scanner;
-import java.util.Locale;
-import java.util.List;
+import java.util.*;
+
+import entities.Employee;
 
 public class exercicio1 {
     public static void main(String[] args) {
@@ -16,5 +16,11 @@ public class exercicio1 {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+
+        List<String> emp = new ArrayList<>();
+
+        System.out.print("How many employees will be registered? ");
+        int quantityEmployees = sc.nextInt();
+        sc.nextLine();
     }
 }
