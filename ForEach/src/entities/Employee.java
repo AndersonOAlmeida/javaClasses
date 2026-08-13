@@ -26,4 +26,8 @@ public class Employee {
         setName(name);
         setSalary(salary);
     }
+
+    public String toString() {
+        return id + ", " + name + ", " + String.format("%.2f", salary);
+    }
 }
