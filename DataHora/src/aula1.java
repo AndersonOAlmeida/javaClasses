@@ -1,6 +1,7 @@
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class aula1 {
     public static void main(String[] args) {
@@ -51,6 +52,7 @@ public class aula1 {
         LocalDate d04 = LocalDate.parse("2022-07-20");
         LocalDateTime d05 = LocalDateTime.parse("2022-07-20T01:30:26");
         Instant d06 = Instant.parse("2022-07-20T01:30:26Z");
+        Instant d07 = Instant.parse("2022-07-20T01:30:26-03:00");
 
         // O método parse converte uma string de texto para um objeto LocalDateTime ou Instant
         /* O java por padrão já converte os valores data-hora para o padrão ISO 8601 utilizando por padrão o .toString, caso precise
@@ -60,5 +62,26 @@ public class aula1 {
         System.out.println("d04: " + d04);
         System.out.println("d05: " + d05);
         System.out.println("d06: " + d06);
+        System.out.println("d07: " + d07);
+
+        /* Formatando os tipos de data-hora em java, transformando um jeito de inserir datas no padrão ISO 8601 */
+        // Formatando apenas dia
+        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate d08 = LocalDate.parse("20/07/2022", fmt1);
+
+        //Formatando dia e hora
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        LocalDateTime d09 = LocalDateTime.parse("20/07/2022 01:30", fmt2);
+
+        /* Fomra de inserir data separadamente, sendo um atributo por vez */
+        // Inserindo apenas o dia
+        LocalDate d10 = LocalDate.of(2022, 07, 20);
+        // Inserindo o dia com as horas
+        LocalDateTime d11 = LocalDateTime.of(2022, 07, 20, 01, 30);
+
+        System.out.println("d08: " + d08);
+        System.out.println("d09: " + d09);
+        System.out.println("d10: " + d10);
+        System.out.println("d11: " + d11);
     }
 }
