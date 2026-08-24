@@ -17,16 +17,6 @@ public class Worker {
     private List<HourContract> contracts = new ArrayList<>();
     /* Composição do tipo tem-muitos, não se instancia no construtor, se instancia por padrão no atributo */
 
-    /* Construtores */
-    public Worker() {}
-
-    public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
-        this.name = name;
-        this.level = level;
-        this.baseSalary = baseSalary;
-        this.department = department;
-    }
-
     /* Getters e Setters */
 
     public String getName() {
@@ -63,6 +53,14 @@ public class Worker {
 
     public List<HourContract> getContracts() {
         return contracts;
+    }
+
+    /* Construtores */
+    public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
+        setName(name);
+        setLevel(level);
+        setBaseSalary(baseSalary);
+        this.department = department;
     }
 
     /* Métodos */

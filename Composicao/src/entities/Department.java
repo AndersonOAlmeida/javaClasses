@@ -3,13 +3,6 @@ package entities;
 public class Department {
     private String name;
 
-    /* Construtores */
-    public Department() {}
-
-    public Department(String name) {
-        this.name = name;
-    }
-
     /* Getters e Setters */
     public String getName() {
         return name;
@@ -17,5 +10,12 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    /* Construtores */
+    public Department() {}
+
+    public Department(String name) {
+        setName(name);
     }
 }
