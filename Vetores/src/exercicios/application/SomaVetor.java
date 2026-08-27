@@ -1,52 +1,48 @@
 package exercicios.application;
 
-/* Importando as classes que serão utilizadas */
-import java.util.Scanner;
+/* Importando as classes que serão utilizadas no programa */
 import java.util.Locale;
+import java.util.Scanner;
 
 public class SomaVetor {
     public static void main(String[] args) {
-        /* Enunciado:
-        * Faça um programa que leia N números reais e armazene-os num vetor. Em seguida:
-        * - Imprimir todos os elementos do vetor.
-        * - Mostrar na tela a soma e a média dos elementos do vetor. */
-
-        /* Definindo o sistema de formatação de valores para os valores dos Estados Unidos */
+        /* Faça um programa que leia N números reais e armazene-os em um vetor.
+        Em seguida:
+            - Imprimir todos os elementos do vetor
+            - Mostrar na tela a soma e a média dos elementos do vetor */
+        /* Utilizando a formatação americana de valores flutuantes (invés de vírgula,
+         * o sistema utiliza ponto [10,00 -> 10.00]) */
         Locale.setDefault(Locale.US);
 
-        /* criando um objeto scanner para leitura de informações inseridas pelo usuário */
+        /* Definindo uma variável para entrada de dados pelo usuário */
         Scanner sc = new Scanner(System.in);
 
-        /* armazenando os números limites do vetor */
+        /* Obtendo o número limite do vetor e criando o vetor */
         System.out.print("Quantos números você vai digitar? ");
         int limit = sc.nextInt();
+        double[] list = new double[limit];
 
-        /* criando o array */
-        double[] vect = new double[limit];
-
-        /* inserindo valores no array */
-        for(int i = 0; i < limit; i++) {
+        /* Percorrendo e adicionando valores no vetor */
+        for (int i = 0; i < limit; i++) {
             System.out.print("Digite um número: ");
-            vect[i] = sc.nextDouble();
-        }
-        /* percorrendo os valores para mostrá-los na tela */
-        System.out.print("VALORES: ");
-        for(int j = 0; j < vect.length; j++) {
-            System.out.print(vect[j] + ", ");
+            list[i] = sc.nextDouble();
         }
 
-        /* somando os valores do array */
-        System.out.print("SOMA: ");
+        /* Mostrando os valores armazenados no vetor */
+        System.out.print("\nVALORES = ");
+        for (int j = 0; j < list.length; j++) {
+            System.out.print(list[j] + " ");
+        }
+
+        /* Somando os valores do vetor e imprimindo na tela */
         double sum = 0;
-        for(int k = 0; k < vect.length; k++) {
-            sum = vect[k]+=vect[k];
-            System.out.println(sum);
+        for (int k = 0; k < list.length; k++) {
+            sum += list[k];
         }
+        System.out.printf("\nSOMA = %.2f", sum);
 
-        /* fazendo a media dos valores do array */
-        System.out.print("MEDIA: ");
-        for(int l = 0; l < vect.length; l++) {
-            double media = sum / vect.length;
-        }
+        /* Tirando a média dos valores e imprimindo na tela */
+        double media = sum / limit;
+        System.out.printf("\nMEDIA = %.2f", media);
     }
 }

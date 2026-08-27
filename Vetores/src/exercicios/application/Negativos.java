@@ -19,7 +19,7 @@ public class Negativos {
         System.out.print("Quantos números você vai digitar? ");
         int limit = sc.nextInt();
 
-        /* Criando um vetor de números inteiros, com o limite que foi informado antes */
+        /* Criando um vetor de números inteiros, com o limite informado antes */
         int[] list = new int[limit];
 
         /* Verificando se o limite está entre 1 e 10 */
@@ -40,5 +40,7 @@ public class Negativos {
         } else {
             System.out.print("Insira um valor entre 1 e 10!");
         }
+
+        sc.close();
     }
 }
