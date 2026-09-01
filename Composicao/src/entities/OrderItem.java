@@ -27,6 +27,10 @@ public class OrderItem {
         this.price = price;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
     /* Constructors */
     public OrderItem() {}
 

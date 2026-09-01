@@ -1,8 +1,11 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
+    /* Attributes */
     private String name;
     private String email;
     private LocalDate birthDate;
@@ -40,5 +43,14 @@ public class Client {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
     }
 }
