@@ -5,7 +5,6 @@ import entities.Client;
 import entities.OrderItem;
 import entities.Product;
 import entities.enums.OrderStatus;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -58,5 +57,7 @@ public class Program3 {
         }
 
         System.out.println(order.toString());
+
+        sc.close();
     }
 }
