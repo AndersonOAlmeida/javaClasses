@@ -10,6 +10,7 @@ public class Client {
     private String email;
     private LocalDate birthDate;
 
+    private static DateTimeFormatter bdayFmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     /* Getters and Setters */
 
     public String getName() {
@@ -47,10 +48,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
+        return getName() + " (" + getBirthDate().format(bdayFmt) + ") " + " - " + getEmail() + "\n";
     }
 }

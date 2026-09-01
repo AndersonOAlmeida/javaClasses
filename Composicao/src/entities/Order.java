@@ -16,7 +16,6 @@ public class Order {
 
     /* Formatters */
     private static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    private static DateTimeFormatter bdayFmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     /* Getters and Setters */
 
@@ -68,10 +67,10 @@ public class Order {
         sb.append("\nORDER SUMMARY: \n");
         sb.append("Order moment: " + fmt.format(moment) + "\n");
         sb.append("Order status: " + status + "\n");
-        sb.append("Client: " + client.getName() + " (" + client.getBirthDate().format(bdayFmt) + ") " + " - " + client.getEmail() + "\n");
+        sb.append("Client: " + client.toString());
         sb.append("Order items:\n");
         for (OrderItem oi : items) {
-            sb.append(oi.getProduct().getName() + ", $" + String.format("%.2f", oi.getPrice()) + ", Quantity: " + oi.getQuantity() + ", Subtotal: $" + String.format("%.2f", oi.subTotal()) + "\n");
+            sb.append(oi.toString());
         }
         sb.append("Total price: " + String.format("%.2f", total()));
         return sb.toString();
