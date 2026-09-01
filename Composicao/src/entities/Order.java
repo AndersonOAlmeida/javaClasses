@@ -65,7 +65,7 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("ORDER SUMMARY: \n");
+        sb.append("\nORDER SUMMARY: \n");
         sb.append("Order moment: " + fmt.format(moment) + "\n");
         sb.append("Order status: " + status + "\n");
         sb.append("Client: " + client.getName() + " (" + client.getBirthDate().format(bdayFmt) + ") " + " - " + client.getEmail() + "\n");
