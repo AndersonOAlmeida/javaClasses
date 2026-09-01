@@ -1,8 +1,11 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
+    /* Attributes */
     private String name;
     private String email;
     private LocalDate birthDate;

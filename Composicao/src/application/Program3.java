@@ -37,7 +37,7 @@ public class Program3 {
         String status = sc.nextLine();
         LocalDateTime moment = LocalDateTime.now();
 
-        Order order = new Order(moment, OrderStatus.valueOf(status));
+        Order order = new Order(moment, OrderStatus.valueOf(status), client);
 
         System.out.print("How many items to this order? ");
         int limit = sc.nextInt();
@@ -54,6 +54,7 @@ public class Program3 {
             sc.nextLine();
 
             OrderItem items = new OrderItem(itemQuantity, itemPrice, new Product(itemName, itemPrice));
+            order.addItem(items);
         }
 
         System.out.println(order.toString());
