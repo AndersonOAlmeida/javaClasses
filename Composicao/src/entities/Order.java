@@ -35,6 +35,14 @@ public class Order {
         this.status = status;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     /* Constructors */
     public Order() {}
 
@@ -55,8 +63,8 @@ public class Order {
 
      public Double total() {
         double total = 0;
-        for (OrderItem st : items) {
-            total += st.subTotal();
+        for (OrderItem oi : items) {
+            total += oi.subTotal();
         }
         return total;
     }
