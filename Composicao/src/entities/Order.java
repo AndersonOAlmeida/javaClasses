@@ -1,25 +1,29 @@
 package entities;
 
 import entities.enums.OrderStatus;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private LocalDate moment;
+    private LocalDateTime moment;
     private OrderStatus status;
 
     /* Composition */
     private Client client;
     private List<OrderItem> items = new ArrayList<>();
 
+    /* Formatters */
+    private static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
     /* Getters and Setters */
 
-    public LocalDate getMoment() {
+    public LocalDateTime getMoment() {
         return moment;
     }
 
-    public void setMoment(LocalDate moment) {
+    public void setMoment(LocalDateTime moment) {
         this.moment = moment;
     }
 
@@ -31,12 +35,21 @@ public class Order {
         this.status = status;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     /* Constructors */
     public Order() {}
 
-    public Order(LocalDate moment, OrderStatus status) {
+    public Order(LocalDateTime moment, OrderStatus status, Client client) {
         this.moment = moment;
         this.status = status;
+        this.client = client;
     }
 
     /* Methods */
@@ -48,7 +61,26 @@ public class Order {
         items.remove(item);
     }
 
-    /* public Double total() {
+     public Double total() {
+        double total = 0;
+        for (OrderItem oi : items) {
+            total += oi.subTotal();
+        }
+        return total;
+    }
 
-    } */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nORDER SUMMARY: \n");
+        sb.append("Order moment: " + fmt.format(moment) + "\n");
+        sb.append("Order status: " + status + "\n");
+        sb.append("Client: " + client.toString());
+        sb.append("Order items:\n");
+        for (OrderItem oi : items) {
+            sb.append(oi.toString());
+        }
+        sb.append("Total price: " + String.format("%.2f", total()));
+        return sb.toString();
+    }
 }

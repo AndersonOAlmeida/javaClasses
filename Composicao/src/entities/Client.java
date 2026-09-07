@@ -1,12 +1,16 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
+    /* Attributes */
     private String name;
     private String email;
     private LocalDate birthDate;
 
+    private static DateTimeFormatter bdayFmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     /* Getters and Setters */
 
     public String getName() {
@@ -40,5 +44,10 @@ public class Client {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " (" + getBirthDate().format(bdayFmt) + ") " + " - " + getEmail() + "\n";
     }
 }
