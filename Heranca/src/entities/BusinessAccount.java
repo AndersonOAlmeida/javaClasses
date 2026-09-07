@@ -1,13 +1,20 @@
 package entities;
 
+/* Como explicado no arquivo program, para dizer que essa BusinessAccount herda as propriedades da classe Account, é necessário
+* dizer que BusinessAccount EXTENDS Account */
 public class BusinessAccount extends Account {
+    public static double tax = 10.00;
+
     private Double loanLimit;
 
     /* Constructors */
+    /* o item super() faz referência aos itens que o construtor da classe base */
     public BusinessAccount () {
         super();
     }
 
+    /* Ex: eu não preciso recriar todos as atribuições de number, holder e balance, eu apenas escrevo super e referencio
+    * as atribuições, e ela faz esse trabalho todo em uma linha */
     public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
         super(number, holder, balance);
         this.loanLimit = loanLimit;
@@ -26,7 +33,7 @@ public class BusinessAccount extends Account {
     /* Methods */
     public void loan(Double amount) {
         if (amount <= loanLimit){
-            balance += (amount - 10.00);
+            balance += (amount - tax);
         }
     }
 }
