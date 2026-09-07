@@ -1,8 +1,12 @@
 package entities;
 
 public class Account {
+    /* Conta base, todas os tipos de contas terão esses atributos e métodos dessa classe */
+
     private Integer number;
     private String holder;
+    /* Para que as classes que irão herdar possam ter acesso aos atributos da classe base, deve-se definir esses atributos
+    * como protected, que mantém o atributo privado, porém permite o acesso externo de outras classes filhas */
     protected Double balance;
 
     /* Constructors */
