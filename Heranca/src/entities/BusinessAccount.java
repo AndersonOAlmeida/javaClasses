@@ -36,4 +36,12 @@ public class BusinessAccount extends Account {
             balance += (amount - tax);
         }
     }
+
+    @Override
+    public void withdraw(Double amount) {
+        /* o item super também pode fazer referência a um método específico da classe base, nesse caso, eu estou reutilizando toda a lógida de desconto do
+        * saque da classe base, e adicionando um desconto adicional de 2.00 */
+        super.withdraw(amount);
+        balance -= 2.00;
+    }
 }

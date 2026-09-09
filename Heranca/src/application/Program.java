@@ -53,5 +53,21 @@ public class Program {
             acc5.updateBalance();
             System.out.println("Update!");
         }
+
+        // Sobreposições
+        /* Conta normal com o desconto na função de saque */
+        Account acc6 = new Account(1005, "Alex", 1000.00);
+        acc6.withdraw(200.00);
+        System.out.println(acc6.getBalance());
+
+        /* Conta poupança com a sobreposição de saque sem o desconto */
+        Account acc7 = new SavingsAccount(1006, "Maria", 1000.00, 0.01);
+        acc7.withdraw(200.00);
+        System.out.println(acc7.getBalance());
+
+        /* Conta empresarial com a sobreposição de saque com o desconto adicional */
+        Account acc8 = new BusinessAccount(1007, "Bob", 1000.00, 200.00);
+        acc8.withdraw(200.00);
+        System.out.println(acc8.getBalance());
     }
 }

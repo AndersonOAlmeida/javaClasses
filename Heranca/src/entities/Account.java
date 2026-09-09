@@ -1,7 +1,7 @@
 package entities;
 
 public class Account {
-    /* Conta base, todas os tipos de contas terão esses atributos e métodos dessa classe */
+    /* Conta base, todos os tipos de contas terão esses atributos e métodos dessa classe */
 
     private Integer number;
     private String holder;
@@ -43,7 +43,7 @@ public class Account {
     /* Methods */
 
     public void withdraw(Double amount) {
-        balance -= amount;
+        balance -= amount + 5.0;
     }
 
     public void deposit(Double amount) {
