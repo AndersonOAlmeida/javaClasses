@@ -1,6 +1,6 @@
 package entities;
 
-public class Account {
+public abstract class Account {
     /* Conta base, todos os tipos de contas terão esses atributos e métodos dessa classe */
 
     private Integer number;
