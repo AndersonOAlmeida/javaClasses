@@ -1,6 +1,6 @@
 package application;
 
-import entities.Reservation;
+import model.entities.Reservation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
