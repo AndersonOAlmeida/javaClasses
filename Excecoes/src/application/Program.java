@@ -1,6 +1,7 @@
 package application;
 
 import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,9 +34,15 @@ public class Program {
             System.out.print("Reservation: " + reservation.toString() + "\n");
         } catch (ParseException e) {
             System.out.println("Invalid date format");
-        } catch (IllegalArgumentException e) {
+        /* Para tratar uma exceção, eu preciso colocar o tipo dela em algum catch, para que possamos tratar a exceção propagada lá no
+        * objeto Reservation */
+        } catch (DomainException e) {
             System.out.println("Error in reservation: " + e.getMessage());
+        /* Para que o programa não quebre com uma exceção inesperada, podemos fazer o seguinte catch: */
+        } catch (RuntimeException e) {
+            System.out.println("Unexpected error!");
         }
+
         sc.close();
     }
 }
