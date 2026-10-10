@@ -1,5 +1,7 @@
 package model.entities;
 
+import model.exceptions.DomainException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +28,11 @@ public class Reservation {
         return checkOut;
     }
 
-    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) throws DomainException {
+        /* Podemos também fazer o conceito de programação defensiva, que faz a validação de uma exceção já no início dos métodos */
+        if (!checkOut.after(checkIn)) {
+            throw new DomainException("Check-out must be after check-in date");
+        }
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -37,7 +43,19 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
+    /* Para podermos tratar essa exceção no programa principal, sem que o compilador nos obriga a tratá-la com o try/catch aqui
+    * no construtor, é fundamental que adicionamos o "throws (nome da exceção personalizada que criamos)", isso chama-se propagar a
+    * exceção */
+    public void updateDates(Date checkIn, Date checkOut) throws DomainException {
+        Date now = new Date();
+        if (checkIn.before(now) || checkOut.before(now)) {
+             throw new DomainException("Reservation dates for update must be futures dates");
+        }
+
+        if (!checkOut.after(checkIn)) {
+            throw new DomainException("Check-out must be after check-in date");
+        }
+
         this.checkIn = checkIn;
         this.checkOut = checkOut;
     }
