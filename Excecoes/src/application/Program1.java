@@ -14,22 +14,22 @@ public class Program1 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Enter account data");
+        System.out.print("Number: ");
+        int accountNumber = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Holder: ");
+        String accountHolder = sc.nextLine();
+        System.out.print("Initial balance: ");
+        double accountBalance = sc.nextDouble();
+        System.out.print("Withdraw limit: ");
+        double limitValue = sc.nextDouble();
+
+        Account acc = new Account(accountNumber, accountHolder, accountBalance, limitValue);
+
+        System.out.print("\nEnter amount for withdraw: ");
+        double withdrawAmount = sc.nextDouble();
         try {
-            System.out.println("Enter account data");
-            System.out.print("Number: ");
-            int accountNumber = sc.nextInt();
-            sc.nextLine();
-            System.out.print("Holder: ");
-            String accountHolder = sc.nextLine();
-            System.out.print("Initial balance: ");
-            double accountBalance = sc.nextDouble();
-            System.out.print("Withdraw limit: ");
-            double limitValue = sc.nextDouble();
-
-            Account acc = new Account(accountNumber, accountHolder, accountBalance, limitValue);
-
-            System.out.print("\nEnter amount for withdraw: ");
-            double withdrawAmount = sc.nextDouble();
             acc.withdraw(withdrawAmount);
             System.out.print(acc);
         } catch (AccountException e) {

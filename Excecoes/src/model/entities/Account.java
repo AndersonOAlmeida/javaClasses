@@ -52,18 +52,19 @@ public class Account {
         balance += amount;
     }
 
-    public void withdraw(Double amount) throws AccountException {
-        double calc = balance - amount;
+    public void withdraw(Double amount) {
+        validateWithdraw(amount);
+        balance -= amount;
+    }
 
-        if (amount > withdrawLimit) {
+    private void validateWithdraw(double amount) {
+        if (amount > getWithdrawLimit()) {
             throw new AccountException("The amount exceeds withdraw limit");
         }
 
-        if (calc < 0) {
+        if (amount > getBalance()) {
             throw new AccountException("Not enough balance");
         }
-
-        balance -= amount;
     }
 
     @Override
