@@ -1,9 +1,6 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -16,13 +13,26 @@ public class Exercise1 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        String filePath = "c:\\temp\\exs\\summary.csv";
+        System.out.print("Enter with the path of file: ");
+        String filePath = sc.nextLine();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        File path = new File(filePath);
+        String parentPath = path.getParent();
+        String outPath = parentPath + "\\out";
+        new File(outPath).mkdir();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath));
+             BufferedWriter bw = new BufferedWriter(new FileWriter(outPath + "\\summary.csv"))) {
             String line = br.readLine();
             while (line != null) {
                 String product[] = line.split(",");
-                System.out.println(product);
+                double val = Double.parseDouble(product[1]);
+                int quant = Integer.parseInt(product[2]);
+                double finalPrice = val * quant;
+                String lines = product[0] + "," + String.format( "%.2f" ,finalPrice);
+                bw.write(lines);
+                bw.newLine();
+                line = br.readLine();
             }
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
