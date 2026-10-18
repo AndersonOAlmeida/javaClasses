@@ -1,12 +1,11 @@
 package application;
 
-import model.entities.Reservation;
-import model.exceptions.DomainException;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 public class Program {
     public static void main(String[] args) {
