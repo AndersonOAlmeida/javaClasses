@@ -1,9 +1,11 @@
 package model.entities;
 
 public class Invoice {
+    /* Attributes */
     private Double basicPayment;
     private Double tax;
 
+    /* Constructors */
     public Invoice() {}
 
     public Invoice(Double basicPayment, Double tax) {
@@ -11,6 +13,7 @@ public class Invoice {
         this.tax = tax;
     }
 
+    /* Getters and Setters */
     public Double getBasicPayment() {
         return basicPayment;
     }
@@ -27,6 +30,8 @@ public class Invoice {
         this.tax = tax;
     }
 
+    /* Methods */
+    /* Calculando o valor total do aluguel com o imposto */
     public Double getTotalPayment() {
         return getBasicPayment() + getTax();
     }

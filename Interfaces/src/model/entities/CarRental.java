@@ -3,15 +3,15 @@ package model.entities;
 import java.time.LocalDateTime;
 
 public class CarRental {
-    /* Atributos */
+    /* Attributes */
     private LocalDateTime start;
     private LocalDateTime finish;
 
-    /* Composições */
+    /* Compositions */
     private Vehicle vehicle;
     private Invoice invoice;
 
-    /* Construtores */
+    /* Constructors */
     public CarRental() {}
 
     public CarRental(LocalDateTime start, LocalDateTime finish, Vehicle vehicle) {
@@ -20,7 +20,7 @@ public class CarRental {
         this.vehicle = vehicle;
     }
 
-    /* Getters e Setters */
+    /* Getters and Setters */
     public LocalDateTime getStart() {
         return start;
     }
